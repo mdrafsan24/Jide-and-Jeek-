@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ChalkboardSE.ttc">
+            <string>ChalkboardSE-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Whack_a_jellyfish" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwI-cW-L7q">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4G-dd-KmW">
+                                <rect key="frame" x="20" y="547" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="c6l-1I-wXv"/>
+                                    <constraint firstAttribute="height" constant="100" id="rbX-x7-AuC"/>
+                                </constraints>
+                                <state key="normal" image="Play"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J7s-ts-UXk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdP-1S-6A9">
+                                <rect key="frame" x="255" y="547" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="qkS-O1-bQA"/>
+                                    <constraint firstAttribute="height" constant="100" id="xT9-lM-qbb"/>
+                                </constraints>
+                                <state key="normal" image="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tvR-GG-M9u"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWa-0m-7on">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lets Play!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyC-x9-Br3">
+                                        <rect key="frame" x="118" y="4.5" width="140" height="42.5"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23156595229999999" green="0.41639411450000002" blue="0.46092718840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="EyC-x9-Br3" firstAttribute="centerY" secondItem="JWa-0m-7on" secondAttribute="centerY" id="0Nb-Qg-stw"/>
+                                    <constraint firstItem="EyC-x9-Br3" firstAttribute="centerX" secondItem="JWa-0m-7on" secondAttribute="centerX" id="Rd3-Rr-Aou"/>
+                                    <constraint firstAttribute="height" constant="50" id="lE4-8s-KdB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bwI-cW-L7q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AZz-bG-J5Z"/>
+                            <constraint firstItem="JWa-0m-7on" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jwf-Z7-Etg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QdP-1S-6A9" secondAttribute="bottom" constant="20" id="LFX-S5-WhR"/>
+                            <constraint firstItem="JWa-0m-7on" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b3t-VO-T1H"/>
+                            <constraint firstItem="bwI-cW-L7q" firstAttribute="top" secondItem="JWa-0m-7on" secondAttribute="bottom" id="fas-as-iFd"/>
+                            <constraint firstItem="j4G-dd-KmW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="g24-aS-yEf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QdP-1S-6A9" secondAttribute="trailing" constant="20" id="lH2-2R-GEd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="j4G-dd-KmW" secondAttribute="bottom" constant="20" id="pEN-Io-GgI"/>
+                            <constraint firstItem="JWa-0m-7on" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tZR-r9-Ffs"/>
+                            <constraint firstItem="bwI-cW-L7q" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v2K-Y0-tb0"/>
+                            <constraint firstItem="bwI-cW-L7q" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vAc-fW-MsA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playBtn" destination="j4G-dd-KmW" id="ZUX-p4-Kw0"/>
+                        <outlet property="sceneView" destination="bwI-cW-L7q" id="OOz-Kr-ElV"/>
+                        <outlet property="timer" destination="EyC-x9-Br3" id="ytZ-cP-u47"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="125.59999999999999" y="107.49625187406298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Play" width="128" height="128"/>
+        <image name="Reset" width="128" height="128"/>
+    </resources>
 </document>
